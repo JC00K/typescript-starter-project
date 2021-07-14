@@ -1,8 +1,12 @@
-function add(n1, n2) {
-    return n1 + n2;
+var userInput; // Unknown Type
+// Unknown is preferred over any if unsure what type is stored in a variable (with a valid type check through an if statement). Still should not be used frequently (union types are more ideal in most cases).
+var userName;
+userInput = 5;
+userInput = 'Jeremy';
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-function printResult(num) {
-    // Void Return Type
-    console.log('Result: ' + num);
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-printResult(add(5, 12));
+generateError('An error occurred!', 500);
